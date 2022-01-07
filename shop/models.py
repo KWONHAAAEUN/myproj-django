@@ -15,5 +15,6 @@ class Review(TimestampedModel):
     score = models.PositiveSmallIntegerField(
         validators=[
             MaxValueValidator(5),
+            # Maxlength는 문자열 개념
         ],
     )
