@@ -10,3 +10,4 @@ class TimestampedModel(models.Model):
 class Article (TimestampedModel):
     title=models.CharField(max_length=100)
     content=models.TextField()
+    photo=models.ImageField(blank=True)
