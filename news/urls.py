@@ -8,5 +8,6 @@ router = DefaultRouter()
 router.register("articles", views.ArticleViewSet)
 
 urlpatterns = [
+    # path("articles.json", views.article_list),
     path("api/", include(router.urls)),
 ]
