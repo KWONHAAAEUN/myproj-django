@@ -17,4 +17,4 @@ class Article (TimestampedModel):
                            ])
     content=models.TextField()
     photo=models.ImageField(blank=True)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=1)
