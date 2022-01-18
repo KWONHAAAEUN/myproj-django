@@ -12,7 +12,18 @@ class ArticleViewSet(ModelViewSet):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
     # permission_classes = [AllowAny] # DRF 디폴트 설정
-    permission_classes = [IsAuthenticated]
+    # 아래 코드는 위 코드와 같다
+    #permission_classes = [IsAuthenticated]
+
+    def get_permissions(self):
+        # if self.request.method in ("POST","PUT","PATCH","DELETE"):
+        #     return [IsAuthenticated()]
+        # return [AllowAny()]
+
+        if self.request.method == "GET":
+            return [AllowAny()]
+        return [IsAuthenticated()]
+
 
     #
     # def get_serializer_class(self):
