@@ -138,6 +138,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+# 각 앱에 나눠 저장된 static 파일들을
+# 한 곳으로 모아서 저장할 디렉토리 경로
+# 배포 시에만 의미있는 설정
+# 한 곳으로 모으는 명령: python manage.py collectstatic
+STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_URL="/media/"
 MEDIA_ROOT = BASE_DIR/"media"
